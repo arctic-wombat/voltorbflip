@@ -17,6 +17,8 @@ export default function About() {
       <h2>Credits</h2>
       <p>
         Original puzzle design: Game Freak
+      </p>
+      <p>
         Original implementation: <a href="https://github.com/steiner26/voltorbflip">Brandon Stein</a>
       </p>
     </div>
