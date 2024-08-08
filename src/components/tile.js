@@ -1,5 +1,5 @@
 import React from "react"
-import styles from "../styles/components/tile.module.scss"
+import * as styles from "../styles/components/tile.module.scss"
 import classNames from "classnames/bind"
 
 import Memo0 from "../images/icons/memo-0.svg"

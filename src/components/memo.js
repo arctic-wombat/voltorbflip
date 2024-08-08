@@ -1,5 +1,5 @@
 import React from "react"
-import styles from "../styles/components/memo.module.scss"
+import * as styles from "../styles/components/memo.module.scss"
 
 import MemoX from "../images/icons/memo-x.svg"
 import MemoVoltorb from "../images/icons/large-voltorb.svg"

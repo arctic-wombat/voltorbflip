@@ -1,5 +1,5 @@
 import React from "react"
-import styles from "../styles/components/game-container.module.scss"
+import * as styles from "../styles/components/game-container.module.scss"
 
 import BoardContainer from "./boardContainer"
 import Memo from "./memo"
@@ -192,10 +192,20 @@ class GameContainer extends React.Component {
       var newState = {}
       if (prevState.status === states.GAMEWON) {
         newState.status = states.FLIPWON
-      } else if (prevState.status === states.GAMELOST) {
-        newState.status = states.FLIPLOST
+      // } else if (prevState.status === states.GAMELOST) {
+      //   newState.status = states.FLIPLOST
       } else if (prevState.status === states.FLIPWON) {
-        const level = Math.min(prevState.level + 1, 7)
+        // const level = Math.min(prevState.level + 1, 7)
+        console.log("previous level: " + prevState.prevLevel)
+        console.log("current level: " + prevState.level)
+        var level
+        if (prevState.level === 5) {
+          level = 1
+        }
+        else {
+          level = Math.min(prevState.level + 1, 5)
+        }
+        console.log("next level: " + level)
         newState.level = level
         newState.prevLevel = prevState.level
         newState.totalCoins = Math.min(
@@ -209,7 +219,7 @@ class GameContainer extends React.Component {
         newState.memo = this.createMemo()
         newState.status = states.NEWLEVEL
         this.timer = setTimeout(this.startGame, 2000)
-      } else if (prevState.status === states.FLIPLOST) {
+      } else if (prevState.status === states.GAMELOST || prevState.status === states.FLIPLOST) {
         const level = levelDown(prevState.level)
         newState.level = level
         newState.prevLevel = prevState.level
@@ -255,7 +265,7 @@ class GameContainer extends React.Component {
         return `Advanced to Game Lv. ${this.state.level}!`
       }
       if (this.state.level === this.state.prevLevel) {
-        return `Ready to play Game Lv. ${this.state.level}!`
+        return `Finished! Ready to play Game Lv. ${this.state.level}!`
       }
       if (this.state.level < this.state.prevLevel) {
         return `Dropped to Game Lv. ${this.state.level}!`

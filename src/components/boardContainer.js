@@ -1,5 +1,5 @@
 import React from "react"
-import styles from "../styles/components/board-container.module.scss"
+import * as styles from "../styles/components/board-container.module.scss"
 
 import Tile from "./tile"
 import Info from "./info"
@@ -61,7 +61,7 @@ class BoardContainer extends React.Component {
                 inMemo={this.props.status === states.MEMO}
                 flipped={
                   flipped ||
-                  this.props.status === states.FLIPLOST ||
+                  // this.props.status === states.FLIPLOST ||
                   this.props.status === states.FLIPWON
                 }
                 {...other}
