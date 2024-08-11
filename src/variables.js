@@ -183,5 +183,5 @@ export function levelDown(level) {
   //   Array.from({ length: level }, (_, i) => i + 1),
   //   Array.from({ length: level }, (_, i) => relative(i + 1, level))
   // )
-  return 1
+  return level
 }
