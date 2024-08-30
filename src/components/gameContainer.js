@@ -199,11 +199,11 @@ class GameContainer extends React.Component {
         console.log("previous level: " + prevState.prevLevel)
         console.log("current level: " + prevState.level)
         var level
-        if (prevState.level === 5) {
+        if (prevState.level === 7) {
           level = 1
         }
         else {
-          level = Math.min(prevState.level + 1, 5)
+          level = Math.min(prevState.level + 1, 7)
         }
         console.log("next level: " + level)
         newState.level = level
